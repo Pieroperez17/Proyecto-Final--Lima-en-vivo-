@@ -3,18 +3,25 @@ import Inicio from './pages/Inicio'
 import Layout from './Layout'
 import Nosotros from './pages/Nosotros'
 import Perfil from './pages/Perfil'
-import {BrowserRouter as Router ,Route,Routes} from 'react-router-dom'
+import {BrowserRouter as Router ,Route,Routes, Navigate} from 'react-router-dom'
+import Login from './pages/Login'
+import { ProtectedRoutes } from './routes/ProtectedRoutes'
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route index element={<Inicio />} />
-            <Route path='nosotros' element={<Nosotros />} />
-            <Route path='perfil' element={<Perfil />} />
-          </Route>
+          {/* Redirigir raíz "/" a login */}
+          <Route path='/' element={<Navigate to="/login" replace />} />
+          {/* Ruta de Login SIN Layout */}
+          <Route path='/login' element={<Login />} />
+          {/* Rutas principales con Layout */}
+          <Route path='inicio' element={<ProtectedRoutes><Layout><Inicio /></Layout></ProtectedRoutes>} />
+          <Route path='nosotros' element={<ProtectedRoutes><Layout><Nosotros /></Layout></ProtectedRoutes>} />
+          <Route path='perfil' element={<ProtectedRoutes><Layout><Perfil /></Layout></ProtectedRoutes>} />
+          {/* Redirigir cualquier otra ruta a login */}
+          <Route path='*' element={<Navigate to="/login" replace />} />
         </Routes>
       </Router>
     </>

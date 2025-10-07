@@ -1,10 +1,13 @@
-import React from 'react';
+import { SignOutButton ,UserProfile} from '@clerk/clerk-react';
+import './styles/perfil.css'
 
 const Perfil = () => {
     return (
-        <div>
-            <h1>Perfil</h1>
-            <p>Bienvenido a tu perfil.</p>
+        <div style={{ paddingTop: '5rem'}}>
+            <SignOutButton className="sign-out-button">
+                <button>Sign out</button>
+            </SignOutButton>
+            <UserProfile />
         </div>
     );
 };
