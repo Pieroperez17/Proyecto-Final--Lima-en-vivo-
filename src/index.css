@@ -136,12 +136,16 @@ body {
   .nav-desktop {
   display: none;
   }
+  .main {
+    padding-left: 0px;
+  }
 }
 
 main {
   margin: 0 auto;
   height: 100%;
   flex: 1;
+  padding-left: 250px;
 }
 .container {
   min-height: 100vh;

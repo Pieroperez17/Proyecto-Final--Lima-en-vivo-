@@ -16,3 +16,100 @@
     color: #fa7725f1;
 
 }
+
+.user-data {
+    
+  background: #222328;
+  padding: 22px 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #18181c36;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+    box-shadow: 0px 5px 15px 0px color-mix(in srgb, transparent, var(--clerk-color-shadow, #000000) 8%),0px 15px 35px -5px color-mix(in srgb, transparent, var(--clerk-color-shadow, #000000) 20%),0px 0px 0px 1px color-mix(in srgb, transparent, white 7%);
+
+}
+
+.user-data h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fafafa;
+}
+
+.bloque-nivel {
+  margin-bottom: 18px;
+  background: #292c34;
+  border-radius: 13px;
+  padding: 15px 12px;
+  box-shadow: 0 3px 14px #1111;
+  display: inline-block;
+  width: 290px;
+}
+
+.bloque-nivel h4 {
+  font-size: 1.18rem;
+  margin-bottom: 8px;
+  color: #4fe090;
+  font-weight: 700;
+}
+
+.xp-info {
+  font-size: 1.09rem;
+  margin-top: 5px;
+  color: #eee;
+}
+
+.xp-num {
+  font-weight: 700;
+  font-size: 1.13rem;
+  color: #f4ec69;
+  background: #21252b;
+  padding: 2px 11px;
+  border-radius: 8px;
+  margin-left: 9px;
+}
+
+.tabla-niveles {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabla-niveles h4 {
+  color: #ffd257;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.tabla-niveles table {
+  width: 260px;
+  border-collapse: collapse;
+  background: #23242a;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 1rem;
+  box-shadow: 0 2px 9px #3332;
+}
+
+.tabla-niveles th, .tabla-niveles td {
+  padding: 8px 0;
+  border-bottom: 1px solid #353542;
+}
+
+.tabla-niveles th {
+  background: #23242a;
+  color: #b7b7be;
+  font-weight: 600;
+}
+
+.tabla-niveles td {
+  color: #fafafa;
+}
+
+.tabla-niveles tr.activo {
+  background: #314a34;
+  color: #4fe090;
+  font-weight: 700;
+}

@@ -1,0 +1,72 @@
+.categorias-vivo {
+    margin: 0 auto;
+    width: 90%;
+}
+
+    .categorias-vivo h2 {
+    font-size: 1.35rem;
+    color: #fafafa;
+    margin-bottom: 13px;
+    padding-left: 8px;
+}
+
+    .lista-categorias {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .lista-categorias {
+        justify-content: center;
+    }
+}
+
+
+    .tarjeta-categoria {
+    width: 150px;
+    background: #212126;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #202020;
+    overflow: hidden;
+    padding: 9px 8px 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .tarjeta-categoria img {
+    width: 100%;
+    height: 175px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+    .nombre-categoria {
+    color: #e7e7ee;
+    font-weight: 700;
+    margin-top: 9px;
+    margin-bottom: 3px;
+    font-size: 1.04rem;
+    text-align: center;
+}
+
+    .espectadores {
+    color: #949494;
+    font-size: .98rem;
+    margin-bottom: 5px;
+}
+
+    .etiquetas-categoria {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-top: 3px;
+}
+.etq {
+    background: #272b31;
+    color: #EE7324;
+    font-size: .90rem;
+    border-radius: 5px;
+    padding: 2px 8px;
+}

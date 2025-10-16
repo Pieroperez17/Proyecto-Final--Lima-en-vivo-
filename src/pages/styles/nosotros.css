@@ -1,0 +1,118 @@
+.Nosotros-container {
+    width: 90%;
+    padding-top: 4rem;
+}
+
+
+
+.Nosotros-title {
+    text-align: center;
+}
+
+
+
+.nosotros-description {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+.team-title {
+
+  margin-top: 3rem;
+
+  text-align: center;
+
+}
+
+
+
+.team-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 3rem;
+
+  margin-top: 2rem;
+
+  padding: 0 2rem;
+
+}
+
+
+
+.team-member {
+
+  text-align: center;
+
+}
+
+
+
+.member-name {
+
+  margin-bottom: 0.5rem;
+
+  font-size: 1.2rem;
+
+}
+
+
+
+.member-link {
+
+  font-size: 0.9rem;
+
+}
+
+
+
+.member-link a {
+
+  color: #4A9EFF;
+
+  text-decoration: none;
+
+}
+
+
+
+.member-link a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+
+.terms-section {
+
+  margin-top: 4rem;
+
+}
+
+
+
+.terms-title {
+
+  text-align: center;
+
+  margin-bottom: 2rem;
+
+}
+
+
+
+.terms-content {
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  text-align: justify;
+
+}

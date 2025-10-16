@@ -1,12 +1,26 @@
 import React from 'react';
+import { useUser } from '@clerk/clerk-react';
+import Sidebar from '../components/Sidebar';
+import LiveCategories from '../components/Sidebar';
+import CategoriasEnVivo from '../components/CategoriasEnVivo';
+import Conversando from '../components/Conversando';
 
 const Inicio = () => {
+    const { user, isLoaded, isSignedIn } = useUser();
+    console.log(user);
+
+    if (!isLoaded || !isSignedIn) {
+        return <div>Cargando...</div>;
+    }
+
+
+ // Ahora puedes acceder a los datos del usuario
+
+
     return (
         <div style={{ paddingTop: '4rem' }}>
-            <h1>Bienvenido a Lima en Vivo</h1>
-            <p>
-                Esta es la página de inicio.
-            </p>
+            <CategoriasEnVivo />
+            <Conversando />
         </div>
     );
 };
