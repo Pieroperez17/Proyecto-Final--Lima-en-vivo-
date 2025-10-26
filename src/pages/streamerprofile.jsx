@@ -50,26 +50,27 @@ function ChatSidebar() {
 
     return (
         <div className="chat-sidebar">
-        <h3>Chat en vivo</h3>
-        <div className="chat-messages">
-            {messages.map((msg, idx) => (
-            <div key={idx} className="chat-message">
-                <span className="chat-user">{msg.user} </span>
-                <span className="level-user">Level {msg.level} :</span>
-                <span>{msg.text}</span>
+            <h3>Chat en vivo</h3>
+            <div className="chat-messages">
+                {messages.map((msg, idx) => (
+                <div key={idx} className="chat-message">
+                    <span className="chat-user">{msg.user} </span>
+                    <span className="level-user">Level {msg.level} :</span>
+                    <span>{msg.text}</span>
+                </div>
+                ))}
             </div>
-            ))}
-        </div>
-        <div className="chat-input-wrapper">
-            <input
-            type="text"
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            placeholder="Escribe un mensaje..."
-            className="chat-input"
-            />
-            <button onClick={handleSend} className="chat-send-btn">Enviar</button>
-        </div>
+            <div className="chat-input-wrapper">
+                <button onClick={handleSend} className="chat-send-btn">🎁</button>
+                <input
+                type="text"
+                value={input}
+                onChange={e => setInput(e.target.value)}
+                placeholder="Escribe un mensaje..."
+                className="chat-input"
+                />
+                <button onClick={handleSend} className="chat-send-btn">Enviar</button>
+            </div>
         </div>
     );
 }

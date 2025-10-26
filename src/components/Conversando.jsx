@@ -4,7 +4,7 @@ const canales = [
     {
         id: 1,
         titulo: 'ARGENTINA VS COLOMBIA',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_benitosdr-320x180.jpg',
+        imagen: 'https://i.ytimg.com/vi/tQNrhJZaSTw/maxresdefault.jpg',
         espectadores: '724',
         usuario: 'BenitoSDR',
         etiquetas: ['Español']
@@ -12,7 +12,7 @@ const canales = [
     {
         id: 2,
         titulo: 'SE DEFINE LA SEMIFINAL DE...',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_davooxeneize-320x180.jpg',
+        imagen: 'https://i.ytimg.com/vi/KUYiTt-1t-k/maxresdefault.jpg',
         espectadores: '27,5 mil',
         usuario: 'davooxeneize',
         etiquetas: ['Español']
@@ -20,7 +20,7 @@ const canales = [
     {
         id: 3,
         titulo: 'Noticias en Vivo',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_newsnow-320x180.jpg',
+        imagen: 'https://i.ytimg.com/vi/GpCjNRD8rd0/maxresdefault.jpg',
         espectadores: '1,200',
         usuario: 'NewsNow',
         etiquetas: ['Español', 'Actualidad']
@@ -28,7 +28,7 @@ const canales = [
     {
         id: 4,
         titulo: 'Charlas de Tecnología',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_techlatam-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '980',
         usuario: 'TechLatam',
         etiquetas: ['Español', 'Tecnología']
@@ -36,7 +36,7 @@ const canales = [
     {
         id: 5,
         titulo: 'Debate Político',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_politicohoy-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '2,300',
         usuario: 'PoliticoHoy',
         etiquetas: ['Español', 'Debate']
@@ -44,7 +44,7 @@ const canales = [
     {
         id: 6,
         titulo: 'Música Urbana',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_urbanbeats-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '3,100',
         usuario: 'UrbanBeats',
         etiquetas: ['Español', 'Música']
@@ -52,7 +52,7 @@ const canales = [
     {
         id: 7,
         titulo: 'Cocina en Directo',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_cocinaconmaria-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '850',
         usuario: 'CocinaConMaria',
         etiquetas: ['Español', 'Cocina']
@@ -60,7 +60,7 @@ const canales = [
     {
         id: 8,
         titulo: 'Viajes por Perú',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_viajaperu-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '1,700',
         usuario: 'ViajaPeru',
         etiquetas: ['Español', 'Viajes']
@@ -68,7 +68,7 @@ const canales = [
     {
         id: 9,
         titulo: 'Gaming en Vivo',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_gamerlatino-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '5,400',
         usuario: 'GamerLatino',
         etiquetas: ['Español', 'Gaming']
@@ -76,7 +76,7 @@ const canales = [
     {
         id: 10,
         titulo: 'Charlas Motivacionales',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_motivatehoy-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '620',
         usuario: 'MotivateHoy',
         etiquetas: ['Español', 'Motivación']
@@ -84,7 +84,7 @@ const canales = [
     {
         id: 11,
         titulo: 'Cine y Series',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_cinefan-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '2,800',
         usuario: 'CineFan',
         etiquetas: ['Español', 'Cine']
@@ -92,7 +92,7 @@ const canales = [
     {
         id: 12,
         titulo: 'Fútbol Sudamericano',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_futbolsud-320x180.jpg',
+        imagen: 'https://i.ytimg.com/vi/MPhmbqmV11M/maxresdefault.jpg',
         espectadores: '4,900',
         usuario: 'FutbolSud',
         etiquetas: ['Español', 'Deportes']
@@ -100,7 +100,7 @@ const canales = [
     {
         id: 13,
         titulo: 'Arte en Vivo',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_artelatino-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '430',
         usuario: 'ArteLatino',
         etiquetas: ['Español', 'Arte']
@@ -108,7 +108,7 @@ const canales = [
     {
         id: 14,
         titulo: 'Podcast Lima',
-        imagen: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_podcastlima-320x180.jpg',
+        imagen: 'https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg',
         espectadores: '1,050',
         usuario: 'PodcastLima',
         etiquetas: ['Español', 'Podcast']

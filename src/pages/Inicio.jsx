@@ -7,7 +7,7 @@ import Conversando from '../components/Conversando';
 
 const Inicio = () => {
     const { user, isLoaded, isSignedIn } = useUser();
-    console.log(user);
+    console.log(user.fullName);
 
     if (!isLoaded || !isSignedIn) {
         return <div>Cargando...</div>;

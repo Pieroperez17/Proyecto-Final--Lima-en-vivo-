@@ -31,9 +31,10 @@
 
 .tag-live {
   position: absolute;
-  top: 9px;
-  left: 11px;
-  background: #EB0400;
+  top: 3px;
+  right: 0px;
+  transform: scale(0.8);
+  background: #eb0400;
   color: #191a1e;
   font-size: .93rem;
   font-weight: 700;
@@ -41,6 +42,7 @@
   border-radius: 7px;
   z-index: 2;
   letter-spacing: 1px;
+  opacity: 0.8;
 }
 
 .tarjeta-conversando img {

@@ -3,7 +3,7 @@
     width: 90%;
 }
 
-    .categorias-vivo h2 {
+.categorias-vivo h2 {
     font-size: 1.35rem;
     color: #fafafa;
     margin-bottom: 13px;
@@ -23,9 +23,9 @@
 }
 
 
-    .tarjeta-categoria {
-    width: 150px;
-    background: #212126;
+.tarjeta-categoria {
+    width: 150px;   
+    background: #181B1A ;
     border-radius: 12px;
     box-shadow: 0 2px 12px #202020;
     overflow: hidden;

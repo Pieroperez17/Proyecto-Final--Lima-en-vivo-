@@ -15,7 +15,7 @@ const Layout = ({children}) => {
                 <div className="navbar-container">
                     <div className="navbar-content">
                         {/* Logo */}
-                        <h2 className="logo">🔴Lima en Vivo</h2>
+                        <h2 className="logo">🟠Lima en Vivo</h2>
 
                         {/* Desktop Navigation */}
                         <nav className="nav-desktop">
