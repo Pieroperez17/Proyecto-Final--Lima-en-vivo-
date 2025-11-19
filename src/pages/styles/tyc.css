@@ -1,0 +1,39 @@
+/* ===== Términos y Condiciones (versión limpia) ===== */
+
+.terms-section {
+  margin-top: 4rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.terms-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 40px;
+
+}
+
+.terms-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: justify;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+
+/* Espaciado entre párrafos */
+.terms-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Resaltar subtítulos dentro del texto */
+.terms-content strong {
+  color: #fa7725f1; /* mismo tono del link para coherencia */
+  font-size: 25px;
+}

@@ -1,12 +1,15 @@
 .Nosotros-container {
     width: 90%;
     padding-top: 4rem;
+    
 }
 
 
 
-.Nosotros-title {
+.nosotros-title {
     text-align: center;
+    font-size: 40px;
+    
 }
 
 
@@ -24,6 +27,8 @@
   margin-top: 3rem;
 
   text-align: center;
+
+  
 
 }
 
@@ -51,6 +56,23 @@
 
 }
 
+
+.member-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #ddd;
+  box-shadow: 0 4px 10px rgb(174, 9, 9);
+}
+
+.nosotros-description p {
+  line-height: 1.8;
+  font-size: 1.15rem;
+  color: #ffffff;
+  padding: 1.2rem 1.5rem;
+}
 
 
 .member-name {

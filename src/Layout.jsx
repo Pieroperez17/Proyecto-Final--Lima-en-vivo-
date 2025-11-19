@@ -37,6 +37,12 @@ const Layout = ({children}) => {
                             >
                                 Perfil
                             </Link>
+                            <Link 
+                                to={'/tyc'}
+                                className="nav-link"
+                            >
+                                TYC
+                            </Link>
                         </nav>
 
                         {/* Mobile Menu Button */}
@@ -89,6 +95,8 @@ const Layout = ({children}) => {
                         <Link to="/inicio" className="footer-link">Inicio</Link>
                         <Link to="/nosotros" className="footer-link">Nosotros</Link>
                         <Link to="/perfil" className="footer-link">Perfil</Link>
+                        <Link to="/tyc" className="footer-link">TYC</Link>
+                        
                     </nav>
                 </div>
             </footer>

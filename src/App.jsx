@@ -4,6 +4,7 @@ import Layout from './Layout'
 import Nosotros from './pages/Nosotros'
 import Perfil from './pages/Perfil'
 import StreamerProfilePage from './pages/streamerprofile'
+import TYC from './pages/TYC'
 import {BrowserRouter as Router ,Route,Routes, Navigate} from 'react-router-dom'
 import Login from './pages/Login'
 import { ProtectedRoutes } from './routes/ProtectedRoutes'
@@ -22,6 +23,7 @@ function App() {
           <Route path='nosotros' element={<ProtectedRoutes><Layout><Nosotros /></Layout></ProtectedRoutes>} />
           <Route path='perfil' element={<ProtectedRoutes><Layout><Perfil /></Layout></ProtectedRoutes>} />
           <Route path='stream/:id' element={<ProtectedRoutes><Layout><StreamerProfilePage /></Layout></ProtectedRoutes>} />
+          <Route path='tyc' element={<ProtectedRoutes><Layout><TYC /></Layout></ProtectedRoutes>} />
           
           {/* Redirigir cualquier otra ruta a login */}
           <Route path='*' element={<Navigate to="/login" replace />} />
