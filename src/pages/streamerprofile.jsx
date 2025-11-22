@@ -1,39 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-
-
+import { IoGiftOutline } from "react-icons/io5";
+import Streams from '../data/streams';
 import './styles/stream.css'
+import { Scale } from 'lucide-react';
 
-const data = {
-    id: 1,
-    nombre: 'Streamer Ejemplo',
-    descripcion: 'Streamer apasionado por los videojuegos, la tecnología y las charlas en vivo. Conecta con su comunidad cada semana con contenido divertido y autenticidad total.',
-    avatar: 'https://i.ytimg.com/vi/HjNDEQ0VP6c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBDzqYqmcwqZQoD5TTmpO96s5g50Q',
-    streamPreview: 'https://i.ytimg.com/vi/mGLoMdDF7ag/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD21gGZ4OpGVv3Z4zB6dWc5uqWuQA',
-    seguidores: 1234,
-    enVivo: false,
-    categoria: 'Just Chatting',
-    pais: 'Perú',
-    plataforma: 'YouTube Live',
-    duracionPromedio: '2 horas',
-    etiquetas: ['gaming', 'charlas', 'comunidad', 'humor'],
-    redes: {
-        youtube: 'https://www.youtube.com/@streamerejemplo',
-        instagram: 'https://instagram.com/streamer_ejemplo',
-        tiktok: 'https://www.tiktok.com/@streamerejemplo',
-        twitter: 'https://twitter.com/streamerejemplo'
-    },
-    estadisticas: {
-        visualizacionesTotales: 18500,
-        streamsRealizados: 57,
-        promedioEspectadores: 320,
-        likesTotales: 6900
-    },
-    destacado: true,
-    horarioTransmision: 'Lunes, miércoles y viernes de 6pm a 8pm',
-    fechaRegistro: '2024-04-12',
+const getDataById = (id) => {
+    return Streams.find(stream => stream.nombre.toLowerCase() === id.toLowerCase());
 };
-
 function ChatSidebar() {
     const [messages, setMessages] = useState([
         { user: "Juan", level: 2, text: "¡Hola! ¿Ya empezó el stream?" },
@@ -54,14 +28,16 @@ function ChatSidebar() {
             <div className="chat-messages">
                 {messages.map((msg, idx) => (
                 <div key={idx} className="chat-message">
-                    <span className="chat-user">{msg.user} </span>
+                    <span className="chat-user">{msg.user}</span>
                     <span className="level-user">Level {msg.level} :</span>
                     <span>{msg.text}</span>
                 </div>
                 ))}
             </div>
             <div className="chat-input-wrapper">
-                <button onClick={handleSend} className="chat-send-btn">🎁</button>
+                <button onClick={handleSend} className="chat-send-btn2">
+                    <IoGiftOutline size={25} />
+                </button>
                 <input
                 type="text"
                 value={input}
@@ -78,7 +54,7 @@ function ChatSidebar() {
 
 const StreamerProfile = () => {
     const { id } = useParams();
-
+    var data = getDataById(id);
     return (
         <div className="profile-container">
             <div className="stream-preview">

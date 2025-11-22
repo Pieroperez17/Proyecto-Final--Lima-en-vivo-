@@ -7,19 +7,43 @@ import './styles/Nosotros.css';
 const Nosotros = () => {
 
     const teamMembers = [
-        { name: 'Fabricio Espag', link: 'https://www.linkedin.com/in/fespag?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',imageprofile:'https://media.licdn.com/dms/image/v2/D4D03AQE5ddifATDTxQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726868439181?e=1762992000&v=beta&t=q3Ee75j-ogsKfyM8_YyUpnLFE-iKr0aHnSQ7Eop33c8' },
-        { name: 'Gianfranco Navarro', link: 'https://www.linkedin.com/in/gianfranco-navarro-hernandez-b76188329/' },
-        { name: 'Sergio Montalvan', link: 'https://www.linkedin.com/in/sergio-montalvan-choquehuanca-ab9b60325/' },
-        { name: 'Rolando Gustavo', link: 'https://www.linkedin.com/in/rolando-gustavo-deudor-fernandez-02b963205/' },
-        { name: 'Auro Garcia', link: 'https://www.linkedin.com/in/auro-garcia-castro-051177324' },
-        { name: 'Sebastian Piero Perez', link: 'https://www.linkedin.com/in/piero-perez-a62091300/' }
+      {
+          name: 'Fabricio Espag',
+          link: 'https://www.linkedin.com/in/fespag',
+          imageprofile: 'src/assets/integrante1.jpg'
+      },
+      {
+          name: 'Gianfranco Navarro',
+          link: 'https://www.linkedin.com/in/gianfranco-navarro-hernandez-b76188329/',
+          imageprofile: 'src/assets/integrante2.jpg'
+      },
+      {
+          name: 'Sergio Montalvan',
+          link: 'https://www.linkedin.com/in/sergio-montalvan-choquehuanca-ab9b60325/',
+          imageprofile: 'src/assets/integrante3.jpg'
+      },
+      {
+          name: 'Rolando Gustavo',
+          link: 'https://www.linkedin.com/in/rolando-gustavo-deudor-fernandez-02b963205/',
+          imageprofile: 'src/assets/integrante4.jpg'
+      },
+      {
+          name: 'Auro Garcia',
+          link: 'https://www.linkedin.com/in/auro-garcia-castro-051177324',
+          imageprofile: 'src/assets/integrante5.jpg'
+      },
+      {
+          name: 'Sebastian Piero Perez',
+          link: 'https://www.linkedin.com/in/piero-perez-a62091300/',
+          imageprofile: 'src/assets/integrante6.jpg'
+      }
     ];
 
 
 
     return (
 
-    <div className="nosotros-container">
+    <div className="nosotros-container"  style={{ paddingTop: '4rem' }}>
         <h1 className="nosotros-title">Nosotros</h1>
         <div className="nosotros-description">
             <p>Bienvenidos a la página de Nosotros. Aquí puedes conocer más sobre nuestro equipo y misión.</p>
@@ -36,6 +60,7 @@ const Nosotros = () => {
       <div className="team-grid">
         {teamMembers.map((member, index) => (
           <div key={index} className="team-member">
+            <img src={member.imageprofile} alt={member.name} className="member-photo" />
             <h3 className="member-name">{member.name}</h3>
             <p className="member-link">
               <a href={member.link} target="_blank" rel="noopener noreferrer">LinkedIn</a>

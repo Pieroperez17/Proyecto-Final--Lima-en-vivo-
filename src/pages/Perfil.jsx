@@ -14,7 +14,7 @@ const niveles = [
 
 const Perfil = () => {
     return (
-        <div style={{ paddingTop: '3.5rem'}}>
+        <div  style={{ paddingTop: '5rem' }}>
             <SignOutButton className="sign-out-button">
                 <button>Sign out</button>
             </SignOutButton>

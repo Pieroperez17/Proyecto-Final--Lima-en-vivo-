@@ -69,9 +69,9 @@
   color: #fff;
 }
 .level-user{
-    margin-right: 6px;
-    color: #fbff00;
-    font-weight: 600;
+  margin-right: 6px;
+  color: #fbff00;
+  font-weight: 600;
 }
 .categoria {
   display: inline-block;
@@ -162,7 +162,7 @@
   margin-top: 2px;
 }
 
-/* Meta-información */
+/* Meta-información*/
 .profile-meta {
   padding: 14px 36px 2px 36px;
   font-size: 1.02rem;
@@ -252,6 +252,20 @@
   box-shadow: 0 1px 8px #e94f4f20;
   transition: background 0.16s, color 0.18s;
 }
+
+.chat-send-btn2{
+  background: #e94f4f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 17px;
+  cursor: pointer;
+  box-shadow: 0 1px 8px #e94f4f20;
+  transition: background 0.16s, color 0.18s;
+}
+
+
+
 .chat-send-btn:hover {
   background: #18e77c;
   color: #232433;

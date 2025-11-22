@@ -8,7 +8,7 @@ import {BrowserRouter as Router ,Route,Routes, Navigate} from 'react-router-dom'
 import Login from './pages/Login'
 import { ProtectedRoutes } from './routes/ProtectedRoutes'
 
-function App() {
+function App() {  
   return (
     <>
       <Router>
