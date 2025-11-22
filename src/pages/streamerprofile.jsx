@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-
+import GiftPopup from '../components/GiftPopup';   
 
 import './styles/stream.css'
 
@@ -34,7 +34,7 @@ const data = {
     fechaRegistro: '2024-04-12',
 };
 
-function ChatSidebar() {
+function ChatSidebar({ onOpenGift }) {   // 👈 recibir función para abrir popup
     const [messages, setMessages] = useState([
         { user: "Juan", level: 2, text: "¡Hola! ¿Ya empezó el stream?" },
         { user: "Ana", level: 1, text: "¡Sí! Justo ahora." },
@@ -44,7 +44,7 @@ function ChatSidebar() {
 
     const handleSend = () => {
         if(input.trim().length === 0) return;
-        setMessages([...messages, { user: "Tú",level: 3, text: input }]);
+        setMessages([...messages, { user: "Tú", level: 3, text: input }]);
         setInput("");
     };
 
@@ -61,7 +61,15 @@ function ChatSidebar() {
                 ))}
             </div>
             <div className="chat-input-wrapper">
-                <button onClick={handleSend} className="chat-send-btn">🎁</button>
+                
+                {/* 🎁 BOTÓN DE REGALOS → abre popup */}
+                <button 
+                    onClick={onOpenGift}
+                    className="chat-send-btn"
+                >
+                    🎁
+                </button>
+
                 <input
                 type="text"
                 value={input}
@@ -133,13 +141,33 @@ const StreamerProfile = () => {
 
 
 function StreamerProfilePage() {
+
+    // 🔥 INTEGRACIÓN POPUP
+    const [giftOpen, setGiftOpen] = useState(false);
+
+    const handleSelectGift = (gift) => {
+        alert(`Enviaste: ${gift.name} (🪙 ${gift.price})`);
+        setGiftOpen(false);
+    };
+
     return (
         <div className="streamer-page-layout">
+
             <div className="profile-section">
                 <StreamerProfile />
             </div>
-            <ChatSidebar />
+
+            {/* Pasamos la función al Chat */}
+            <ChatSidebar onOpenGift={() => setGiftOpen(true)} />
+
+            {/* POPUP DE REGALOS */}
+            <GiftPopup
+                open={giftOpen}
+                onClose={() => setGiftOpen(false)}
+                onSelectGift={handleSelectGift}
+            />
         </div>
     );
 }
+
 export default StreamerProfilePage;

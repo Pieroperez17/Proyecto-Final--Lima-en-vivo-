@@ -1,0 +1,66 @@
+.gift-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.gift-popup {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 12px;
+    width: 320px;
+    color: white;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.gift-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.gift-close {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.gift-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gift-item {
+    background: #2c2c2c;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.gift-item:hover {
+    background: #383838;
+}
+
+.gift-emoji {
+    font-size: 1.6rem;
+}
+
+.gift-price {
+    color: #ffa031;
+    font-weight: bold;
+}

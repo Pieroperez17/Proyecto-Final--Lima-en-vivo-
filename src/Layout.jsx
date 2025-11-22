@@ -1,21 +1,66 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from 'lucide-react';
 import Sidebar from './components/Sidebar';
+import { useUser } from "@clerk/clerk-react";
 
 import './index.css';
 
 const Layout = ({children}) => {
     const [open, setOpen] = useState(false);
+    const [saldo, setSaldo] = useState(null);
 
+    const { user, isLoaded, isSignedIn } = useUser();
+
+    // === Obtener saldo del backend ===
+    useEffect(() => {
+        if (!isLoaded || !isSignedIn) return;
+
+        const fetchSaldo = async () => {
+            try {
+                // ID NUMÉRICO (EL QUE DIJISTE)
+                const idUsuario = user?.publicMetadata?.Id_usuario;
+
+                // Si no tiene Id_usuario, no pedimos nada
+                if (!idUsuario) return;
+
+                const res = await fetch(`http://localhost:3000/users/${idUsuario}`);
+                const data = await res.json();
+
+                setSaldo(data.saldoMonedas);
+            } catch (err) {
+                console.error("Error obteniendo saldo:", err);
+            }
+        };
+
+        fetchSaldo();
+    }, [isLoaded, isSignedIn, user]);
 
     return (
     <div className="container">
             <header className="navbar">
                 <div className="navbar-container">
                     <div className="navbar-content">
+
                         {/* Logo */}
                         <h2 className="logo">🟠Lima en Vivo</h2>
+
+                        {/* SALDO MONEDAS (solo si hay usuario) */}
+                        {isSignedIn && (
+                            <div style={{
+                                marginRight: "1rem",
+                                padding: "0.4rem 0.8rem",
+                                background: "#fa7725",
+                                borderRadius: "10px",
+                                fontWeight: "bold",
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "6px",
+                                boxShadow: "0px 0px 6px #00000050"
+                            }}>
+                                🪙 {saldo !== null ? saldo : "..."}
+                            </div>
+                        )}
 
                         {/* Desktop Navigation */}
                         <nav className="nav-desktop">
@@ -80,6 +125,7 @@ const Layout = ({children}) => {
                     </nav>
                 </div>
             </header>
+
             <Sidebar />
             
             <main className="main">
@@ -103,4 +149,4 @@ const Layout = ({children}) => {
         </div>
     );
 };
-export default Layout;    
+export default Layout;
