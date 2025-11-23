@@ -204,7 +204,11 @@
 }
 
 .chat-messages {
-  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  
   overflow-y: auto;
   margin-bottom: 13px;
   border-radius: 8px;
@@ -216,6 +220,7 @@
 .chat-message {
   margin-bottom: 8px;
   line-height: 1.5;
+  text-align: start;
 }
 .chat-user {
   color: #c24700;

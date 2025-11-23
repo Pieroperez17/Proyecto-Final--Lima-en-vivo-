@@ -1,87 +1,56 @@
 import './CategoriasEnVivo.css';
+import { useEffect,useState } from 'react';
+import { ThreeDot } from 'react-loading-indicators'
 
-const categorias = [
-    {
-        id: 1,
-        titulo: 'Just Chatting',
-        imagen: 'https://static-cdn.jtvnw.net/ttv-boxart/509658-285x380.jpg',
-        espectadores: '211,8 mil',
-        etiquetas: ['IRL', 'Casual']
-    },
-    {
-        id: 2,
-        titulo: 'IRL',
-        imagen: 'https://static-cdn.jtvnw.net/ttv-boxart/509660-285x380.jpg',
-        espectadores: '133,7 mil',
-        etiquetas: ['IRL', 'Aventura']
-    },
-    {
-        id: 3,
-        titulo: 'Grand Theft Auto V',
-        imagen: 'https://static-cdn.jtvnw.net/ttv-boxart/32982-285x380.jpg',
-        espectadores: '112,8 mil',
-        etiquetas: ['Shooter', 'Acción']
-    },
-    {
-        id: 4,
-        titulo: 'Slots & Casino',
-        imagen: 'https://static-cdn.jtvnw.net/ttv-boxart/26936_IGDB-285x380.jpg',
-        espectadores: '59,4 mil',
-        etiquetas: ['Azar', 'Casino']
-    },
-    {
-        id: 5,
-        titulo: 'League of Legends',
-        imagen: 'https://static-cdn.jtvnw.net/ttv-boxart/21779-285x380.jpg',
-        espectadores: '98,2 mil',
-        etiquetas: ['MOBA', 'Competitivo']
-    },
-    {
-        id: 6,
-        titulo: 'Valorant',
-        imagen: 'https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg',
-        espectadores: '85,6 mil',
-        etiquetas: ['Shooter', 'Estrategia']
-    },
-    {
-        id: 7,
-        titulo: 'Minecraft',
-        imagen: 'https://static-cdn.jtvnw.net/ttv-boxart/27471-285x380.jpg',
-        espectadores: '73,1 mil',
-        etiquetas: ['Sandbox', 'Creativo']
-    },
-    {
-        id: 8,
-        titulo: 'Fortnite',
-        imagen: 'https://static-cdn.jtvnw.net/ttv-boxart/33214-285x380.jpg',
-        espectadores: '68,9 mil',
-        etiquetas: ['Battle Royale', 'Acción']
-    },
-    {
-        id: 9,
-        titulo: 'Counter-Strike',
-        imagen: 'https://static-cdn.jtvnw.net/ttv-boxart/32399-285x380.jpg',
-        espectadores: '62,7 mil',
-        etiquetas: ['Shooter', 'Competitivo']
-    }
-];
+function CategoriasEnVivo() {
+    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+    const [categorias, setCategorias] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    function CategoriasEnVivo() {
+    useEffect(() => {
+        let mounted = true;
+        const fetchCategorias = async () => {
+            try {
+                const res = await fetch(`${BACKEND_URL}/categorias`);
+                if (!res.ok) throw new Error('Error fetching categorias');
+                const data = await res.json();
+                if (mounted) setCategorias(data);
+            } catch (err) {
+                console.error(err);
+                if (mounted) setCategorias([]);
+            } finally {
+                if (mounted) setLoading(false);
+            }
+        };
+
+        fetchCategorias();
+        return () => { mounted = false; };
+    }, [BACKEND_URL]);
+
+    if (loading) return (
+        
+        <div style={{ display: 'flex', gap:'2rem'  ,justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
+                <h3 className="loading">Cargando categorías   </h3>
+                <ThreeDot variant="bounce" color="#fa7725f1" size="small" text="" textColor="" />
+        </div>
+    );
+
     return (
+        
         <section className="categorias-vivo">
         <h2>Categorías Top en vivo</h2>
         <div className="lista-categorias">
-            {categorias.map(cat => (
-            <div key={cat.id} className="tarjeta-categoria">
-                <img src={cat.imagen} alt={cat.titulo} />
-                <div className="nombre-categoria">{cat.titulo}</div>
-                <div className="espectadores">{cat.espectadores} espectadores</div>
-                <div className="etiquetas-categoria">
-                {cat.etiquetas.map((e, i) => (
-                    <span key={i} className="etq">{e}</span>
-                ))}
+            {categorias.slice(0, 6).map(cat => (
+                <div key={cat.id} className="tarjeta-categoria">
+                    <img src={cat.imagen} alt={cat.titulo} />
+                    <div className="nombre-categoria">{cat.titulo}</div>
+                    <div className="espectadores">{cat.espectadores} espectadores</div>
+                    <div className="etiquetas-categoria">
+                    {cat.etiquetas.map((e, i) => (
+                        <span key={i} className="etq">{e}</span>
+                    ))}
+                    </div>
                 </div>
-            </div>
             ))}
         </div>
         </section>

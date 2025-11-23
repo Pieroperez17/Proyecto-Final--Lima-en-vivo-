@@ -3,6 +3,8 @@ import { Navigate } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 import { ThreeDot } from 'react-loading-indicators'
 
+
+
 export const ProtectedRoutes = ({children}) => {
     const { isLoaded, isSignedIn } = useUser();
     if (!isLoaded) {
