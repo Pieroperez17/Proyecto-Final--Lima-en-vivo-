@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles/Nosotros.css';
+import './styles/nosotros.css';
 
 
 
