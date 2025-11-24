@@ -77,7 +77,9 @@
 
 .cvs-etiquetas {
   display: flex;
-  gap: 7px;
+  gap: 3px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .cvs-etq {
   background: #191f20;

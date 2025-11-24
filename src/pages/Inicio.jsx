@@ -1,13 +1,13 @@
 import React from 'react';
-import { useUser } from '@clerk/clerk-react';
 import Sidebar from '../components/Sidebar';
 import LiveCategories from '../components/Sidebar';
 import CategoriasEnVivo from '../components/CategoriasEnVivo';
-import Conversando from '../components/Conversando';
+import StreamsVivo from '../components/StreamsVivo';
+import { useUser } from '@clerk/clerk-react';
 
 const Inicio = () => {
     const { user, isLoaded, isSignedIn } = useUser();
-    console.log(user.fullName);
+    console.log(user.firstName);
 
     if (!isLoaded || !isSignedIn) {
         return <div>Cargando...</div>;
@@ -20,7 +20,7 @@ const Inicio = () => {
     return (
         <div style={{ paddingTop: '4rem' }}>
             <CategoriasEnVivo />
-            <Conversando />
+            <StreamsVivo />
         </div>
     );
 };

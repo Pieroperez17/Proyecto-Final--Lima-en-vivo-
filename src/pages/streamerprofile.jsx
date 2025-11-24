@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { IoGiftOutline } from "react-icons/io5";
 import './styles/stream.css'
 import { Scale } from 'lucide-react';
-
+import { useUser } from '@clerk/clerk-react';
 
 
 const ChatSidebar = ({ data, setData }) => {
@@ -12,6 +12,8 @@ const ChatSidebar = ({ data, setData }) => {
     const [messages, setMessages] = useState(initial);
     const [input, setInput] = useState("");
     const [sending, setSending] = useState(false);
+    const { user} = useUser();
+
 
     useEffect(() => {
         setMessages(data?.mensajes || []);
@@ -22,7 +24,7 @@ const ChatSidebar = ({ data, setData }) => {
         if (!text) return;
 
         const newMessage = {
-            usuario: "Tú",
+            usuario: user.firstName,
             nivel: 1,
             mensaje: text
         };
