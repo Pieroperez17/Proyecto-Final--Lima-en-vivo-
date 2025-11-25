@@ -1,6 +1,7 @@
 import './StreamsVivo.css';
 import { useState, useEffect } from 'react';
 import { ThreeDot } from 'react-loading-indicators'
+import { Link } from 'react-router-dom';
 
 function StreamsVivo() {
     const [canales, setCanales] = useState(null);
@@ -29,7 +30,7 @@ function StreamsVivo() {
 
     if (loading) return (
         <div style={{ display: 'flex', gap:'2rem'  ,justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
-                <h3 className="loading">Cargando categorías   </h3>
+                <h3 className="loading">Cargando Streams   </h3>
                 <ThreeDot variant="bounce" color="#fa7725f1" size="small" text="" textColor="" />
         </div>
     );
@@ -39,7 +40,7 @@ function StreamsVivo() {
         <h2>Streams En Vivo</h2>
         <div className="lista-conversando">
             {canales.map(chat => (
-                <div key={chat.id} className="tarjeta-conversando">
+                <Link key={chat.nombre} className="tarjeta-conversando" to={`/stream/${chat.nombre}`}>
                     <div className="tag-live">EN VIVO</div>
                     <img src={chat.streamPreview} alt={chat.nombre} />
                     <div className="cvs-info">
@@ -52,7 +53,7 @@ function StreamsVivo() {
                         ))}
                     </div>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
         </section>
