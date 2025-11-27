@@ -7,14 +7,14 @@ import { useUser } from '@clerk/clerk-react';
 
 const Inicio = () => {
     const { user, isLoaded, isSignedIn } = useUser();
-    console.log(user.firstName);
+    console.log(user.imageUrl);
 
     if (!isLoaded || !isSignedIn) {
         return <div>Cargando...</div>;
     }
-
-
- // Ahora puedes acceder a los datos del usuario
+    
+    
+    // Ahora puedes acceder a los datos del usuario
 
 
     return (
