@@ -12,8 +12,18 @@ const ChatSidebar = ({ data, setData }) => {
     const [messages, setMessages] = useState(initial);
     const [input, setInput] = useState("");
     const [sending, setSending] = useState(false);
-    const { user} = useUser();
+    const { user } = useUser();
 
+    // Nuevo: estado para modal de regalos
+    const [showGifts, setShowGifts] = useState(false);
+
+    // Lista de regalos (puedes ajustar nombres/precios/ids)
+    const gifts = [
+        { id: 'Regalo1', name: 'Corazón', price: 1 },
+        { id: 'Regalo2', name: 'Flores', price: 2 },
+        { id: 'Regalo3', name: 'Estrella', price: 5 },
+        { id: 'Regalo4', name: 'Copa', price: 10 }
+    ];
 
     useEffect(() => {
         setMessages(data?.mensajes || []);
@@ -24,7 +34,7 @@ const ChatSidebar = ({ data, setData }) => {
         if (!text) return;
 
         const newMessage = {
-            usuario: user.firstName,
+            usuario: user?.firstName || 'Anon',
             nivel: 1,
             mensaje: text
         };
@@ -45,17 +55,27 @@ const ChatSidebar = ({ data, setData }) => {
             if (!res.ok) throw new Error('Error enviando mensaje');
 
             const updated = await res.json();
-            // Actualizar con la respuesta del servidor
             if (typeof setData === 'function') setData(updated);
             else setMessages(updated.mensajes || updatedMessages);
         } catch (err) {
             console.error(err);
-            // rollback en caso de error
             setMessages(messages);
             alert('Error al enviar el mensaje');
         } finally {
             setSending(false);
         }
+    };
+
+    // Nuevo: abrir modal de regalos
+    const handleSendGift = () => {
+        setShowGifts(true);
+    };
+
+    // Nuevo: comprar regalo -> cerrar modal y mostrar alerta
+    const handleBuyGift = (gift) => {
+        setShowGifts(false);
+        // aquí podrías llamar a una API para procesar pago / registro del regalo
+        window.alert(`Envíaste un regalo: ${gift.name} — Precio: ${gift.price}`);
     };
 
     return (
@@ -71,10 +91,12 @@ const ChatSidebar = ({ data, setData }) => {
                     </div>
                 ))}
             </div>
+
             <div className="chat-input-wrapper">
-                <button onClick={handleSend} className="chat-send-btn2" disabled={sending}>
+                <button onClick={handleSendGift} className="chat-send-btn2" disabled={sending} title="Enviar regalo">
                     <IoGiftOutline size={22} />
                 </button>
+
                 <input
                     type="text"
                     value={input}
@@ -87,6 +109,30 @@ const ChatSidebar = ({ data, setData }) => {
                     {sending ? 'Enviando...' : 'Enviar'}
                 </button>
             </div>
+
+            {showGifts && (
+                <div className="gift-modal-overlay" role="dialog" aria-modal="true">
+                    <div className="gift-modal">
+                        <header className="gift-modal-header">
+                            <h4>Enviar regalo</h4>
+                            <button className="gift-close" onClick={() => setShowGifts(false)}>×</button>
+                        </header>
+                        <div className="gift-list">
+                            {gifts.map(g => (
+                                <div key={g.id} className="gift-item">
+                                    <div className="gift-info">
+                                        <div className="gift-name">{g.name}</div>
+                                        <div className="gift-price">S/ {g.price}</div>
+                                    </div>
+                                    <button className="gift-buy-btn" onClick={() => handleBuyGift(g)}>
+                                        Comprar
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
