@@ -14,10 +14,8 @@ const ChatSidebar = ({ data, setData }) => {
     const [sending, setSending] = useState(false);
     const { user } = useUser();
 
-    // Nuevo: estado para modal de regalos
     const [showGifts, setShowGifts] = useState(false);
 
-    // Lista de regalos (puedes ajustar nombres/precios/ids)
     const gifts = [
         { id: 'Regalo1', name: 'Corazón', price: 1 },
         { id: 'Regalo2', name: 'Flores', price: 2 },
@@ -39,7 +37,6 @@ const ChatSidebar = ({ data, setData }) => {
             mensaje: text
         };
 
-        // UI optimista
         const updatedMessages = [...messages, newMessage];
         setMessages(updatedMessages);
         setInput("");
@@ -66,15 +63,12 @@ const ChatSidebar = ({ data, setData }) => {
         }
     };
 
-    // Nuevo: abrir modal de regalos
     const handleSendGift = () => {
         setShowGifts(true);
     };
 
-    // Nuevo: comprar regalo -> cerrar modal y mostrar alerta
     const handleBuyGift = (gift) => {
         setShowGifts(false);
-        // aquí podrías llamar a una API para procesar pago / registro del regalo
         window.alert(`Envíaste un regalo: ${gift.name} — Precio: ${gift.price}`);
     };
 
